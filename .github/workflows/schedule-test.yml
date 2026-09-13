@@ -3,7 +3,7 @@ name: Schedule test
 on:
   schedule:
     # Run at 7, 27, 47 and 57 minutes past every hour.
-    - cron: "7,27,47,57 * * * *"
+    - cron: "7,17,27,47 * * * *"
 
   # Allows manual runs from GitHub Actions.
   workflow_dispatch:
