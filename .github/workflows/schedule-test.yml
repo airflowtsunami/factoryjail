@@ -1,0 +1,13 @@
+name: Schedule test
+
+on:
+  schedule:
+    - cron: "3,13,23,33,43,53 * * * *"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prove scheduler ran
+        run: echo "Scheduled workflow ran successfully"
