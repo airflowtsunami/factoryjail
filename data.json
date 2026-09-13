@@ -1,13 +1,1 @@
-{
-  "firmware": "2026.20.300",
-  "source": "https://www.teslafi.com/firmware.php?detail=2026.20.300",
-  "current_installs": 20,
-  "total_freed": 0,
-  "next_versions": {},
-  "models": {
-    "Model 3": 10,
-    "Model Y": 9
-  },
-  "checked_at": "2026-09-13T04:04:21.025353+00:00",
-  "note": "Updated automatically from TeslaFi."
-}
+{"firmware":"2026.20.300","source":"https://www.teslafi.com/firmware.php?detail=2026.20.300","current_installs":20,"total_freed":1,"next_versions":{"2026.21.6":1},"models":{"Model 3":10,"Model Y":9},"checked_at":"2026-09-13T03:18:00+00:00","note":"Seed data; GitHub Action will refresh it."}
