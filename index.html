@@ -50,7 +50,7 @@ header{padding:20px 5vw 12px}h1{margin:0;font-size:clamp(28px,5vw,56px)}header p
 </style>
 
 </head><body>
-<header><h1><img src="model3-black-cartoon.jpg" alt="Model 3" style="width:1.7em;height:1em;object-fit:contain;vertical-align:-.18em;margin-right:.12em">Tesla Firmware Jail Watch</h1><p><span class="status"></span>Tracking <b id="fw">2026.20.300</b> — refreshes every 30 minutes</p></header>
+<header><h1><img src="model3-red-transparent.png" alt="Model 3" style="width:1.7em;height:1em;object-fit:contain;vertical-align:-.18em;margin-right:.12em">Tesla Firmware Jail Watch</h1><p><span class="status"></span>Tracking <b id="fw">2026.20.300</b> — refreshes every 30 minutes</p></header>
 <section class="scene">
  <div class="jail" id="jail"><div class="sign"><span id="fw2">2026.20.300</span><br>FIRMWARE JAIL</div><div class="bars"></div></div>
  <div class="freedom" id="freedom"><div class="sign">🌞 FREEDOM!</div><div class="road"></div><div class="sun">😎</div><div class="cloud" style="left:8%;top:100px">☁️</div></div>
@@ -63,7 +63,7 @@ header{padding:20px 5vw 12px}h1{margin:0;font-size:clamp(28px,5vw,56px)}header p
 <div class="foot">Unofficial fan project. Data source: TeslaFi public firmware tracker. No affiliation with Tesla or TeslaFi.</div>
 <script>
 const DATA_URL='./data.json';
-function car(parent,x,y,plate,free=false,i=0){const c=document.createElement('div');c.className='car'+(free?' freecar':'');c.style.left=x+'%';c.style.top=y+'%';c.style.animationDelay=(-i*.17)+'s';c.innerHTML='<img src="model3-black-cartoon.jpg" alt="Tesla Model 3 cartoon"><div class="plate">'+plate+'</div>';parent.appendChild(c)}
+function car(parent,x,y,plate,free=false,i=0){const c=document.createElement('div');c.className='car'+(free?' freecar':'');c.style.left=x+'%';c.style.top=y+'%';c.style.animationDelay=(-i*.17)+'s';c.innerHTML='<img src="model3-red-transparent.png" alt="Tesla Model 3 cartoon"><div class="plate">'+plate+'</div>';parent.appendChild(c)}
 function render(d){document.querySelectorAll('.car').forEach(x=>x.remove());fw.textContent=fw2.textContent=d.firmware;current.textContent=d.current_installs;freed.textContent=d.total_freed;checked.textContent=new Date(d.checked_at).toLocaleString();msg.textContent=d.note||'Data loaded.';models.textContent=d.models?Object.entries(d.models).map(([k,v])=>`${k}: ${v}`).join(' · '):'';next.innerHTML='';Object.entries(d.next_versions||{}).forEach(([v,n])=>{next.innerHTML+=`<tr><td>${v}</td><td>${n}</td></tr>`});const n=Math.min(d.current_installs,30);for(let i=0;i<n;i++)car(jail,8+(i%5)*18,28+Math.floor(i/5)*15,d.firmware,false,i);let j=0;for(const [v,nv] of Object.entries(d.next_versions||{}))for(let k=0;k<Math.min(nv,5);k++)car(freedom,18+(j%3)*23,42+(j%2)*18,v,true,j++);}
 async function load(){try{const r=await fetch(DATA_URL+'?t='+Date.now());if(!r.ok)throw Error(r.status);render(await r.json())}catch(e){msg.textContent='Could not load data.json. GitHub Action may not have run yet.'}}
 let sec=1800;setInterval(()=>{sec--;if(sec<=0){sec=1800;load()}countdown.textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')},1000);load();
