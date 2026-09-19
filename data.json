@@ -1,13 +1,15 @@
 {
   "firmware": "2026.20.300",
   "source": "https://www.teslafi.com/firmware.php?detail=2026.20.300",
-  "current_installs": 21,
-  "total_freed": 0,
-  "next_versions": {},
+  "current_installs": 20,
+  "total_freed": 1,
+  "next_versions": {
+    "2026.26.6.5": 1
+  },
   "models": {
-    "Model 3": 11,
+    "Model 3": 10,
     "Model Y": 9
   },
-  "checked_at": "2026-09-18T23:12:13.544775+00:00",
+  "checked_at": "2026-09-19T01:17:01.848319+00:00",
   "note": "Updated automatically from TeslaFi."
 }
