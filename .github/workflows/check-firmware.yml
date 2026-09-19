@@ -3,7 +3,7 @@ name: Refresh TeslaFi data
 on:
   schedule:
     # TEMPORARY TEST: every 5 minutes
-    - cron: "2,12,22,32,42,52 * * * *"
+    - cron: "2,12,32 * * * *"
     
 
   # Allows manual testing too
